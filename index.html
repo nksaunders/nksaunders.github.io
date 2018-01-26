@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <!--
-	Caminar by TEMPLATED
+	Full Motion by TEMPLATED
 	templated.co @templatedco
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 -->
@@ -11,84 +11,96 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
-	<body>
+	<body id="top">
 
-		<!-- Header -->
-			<header id="header">
-				<div class="logo"><a href="#">Nicholas Saunders <span>astronomy undergraduate</span><span>University of Washington</span></a></div>
-			</header>
+			<!-- Banner -->
+			<!--
+				To use a video as your background, set data-video to the name of your video without
+				its extension (eg. images/banner). Your video must be available in both .mp4 and .webm
+				formats to work correctly.
+			-->
+				<section id="banner" data-video="images/banner">
+					<div class="inner">
+						<header>
+							<h1>Nicholas Saunders</h1>
+							<p><i>astronomy undergraduate,</i><br />
+							<i>university of washington</i></p>
+							<ul class="icons">
+								<li><a href="mailto:nks1994@uw.edu" class="icon fa-envelope"><span class="label">Github</span></a></li>
+								<li><a href="https://github.com/nksaunders" class="icon fa-github"><span class="label">Email</span></a></li>
+								<li><a href="files/cv.pdf" class="icon fa-file-text"><span class="label">CV</span></a></li>
+							</ul>
+						</header>
+						<a href="#main" class="more">Learn More</a>
+					</div>
+				</section>
 
-		<!-- Main -->
-			<section id="main">
-				<div class="inner">
+			<!-- Main -->
+				<div id="main">
+					<div class="inner">
 
+					<!-- Boxes -->
+						<div class="thumbnails">
 
-				<!-- Three -->
-					<section id="four" class="wrapper">
-						<div class="spotlight">
-							<div class="image flush"><img src="images/me.jpg" alt="" /></div>
-							<div class="inner">
-								<h3>About Nicholas</h3>
-								<p> Undergraduate at UW in Seattle, earning a B.S. in Astronomy and Comprehensive Physics, and a B.A. in Comparative Literature (Cinema Studies).
-								</p>
-								<p> My primary research interests are the detection and characterization of exoplanets, particularly using the <i>Kepler</i> Space Telescope and subsequent <i>K2</i> mission.
-								</p>
-								<p> I <i>love</i> talking about space, particularly exoplanets. There is nothing more exciting than passing on curiousity to someone new. You can find me in the UW Planetarium every week giving shows to the public, or at various events around Seattle like Astronomy on Tap at Peddler Brewing Company or League of Astronomers at UW.
-								</p>
+							<div class="box">
+								<a class="image fit"><img src="images/me2.jpg" alt="" /></a>
+								<div class="inner">
+									<h3>about nicholas</h3>
+									<p> Undergraduate at UW in Seattle, earning a B.S. in Astronomy and Comprehensive Physics, and a B.A. in Comparative Literature (Cinema Studies).
+									</p>
+									<p> My primary research interests are the detection and characterization of exoplanets, particularly using the <i>Kepler</i> Space Telescope and subsequent <i>K2</i> mission.
+									</p>
+									<p> I <i>love</i> talking about space, particularly exoplanets. There is nothing more exciting than passing on curiousity to someone new. You can find me in the UW Planetarium every week giving shows to the public, or at various events around Seattle like Astronomy on Tap at Peddler Brewing Company or League of Astronomers at UW.
+									</p>
+								</div>
 							</div>
-						</div>
-						<div class="spotlight alt">
-							<div class="image flush"><img src="images/motion.gif" alt="" /></div>
-							<div  class="inner">
-								<h3>Stellar Simulations</h3>
-								<p>As the <i>Kepler</i> Space Telescope runs out of fuel, its motion will increase in magnitude and become less predictable. I created stellar simulations to understand how increased motion affects noise in <i>K2</i> light curves.
-								</p>
-								<p> <a href="https://github.com/nksaunders/skope">The code.</a>
-								</p>
-								<p> <a href="Example.html">Examples.</a>
-								</p>
-							</div>
-						</div>
-						<div class="spotlight">
-							<div class="image flush"><img src="images/ev.jpg" alt="" /></div>
-							<div class="inner">
-								<h3>Everest</h3>
-								<p> I contributed to the development of the Epic Variability Extraction and Removal for Exoplanet Science Targets (Everest) pipeline. Everest was developed by Luger et al. to remove systematic noise from <i>K2</i> light curves. Using a method called Pixel Level Decorrelation (PLD) based on the work of <a href="http://iopscience.iop.org/article/10.1088/0004-637X/805/2/132/pdf">Deming et al. (2015)</a>, we achieved <i>Kepler</i>-like precision in de-trended light curves down to 15<sup>th</sup> magnitude.
-								</p>
-								<p> <a href="https://arxiv.org/pdf/1702.05488.pdf">R. Luger, E. Kruse, D. Foreman-Mackey, E. Agol, <b>N. Saunders</b>, “An Update to the EVEREST K2 Pipeline: Short Cadence, Saturated Stars, and Kepler-like Photometry down to Kp = 15,” (17 Feb 2017) arXiv:1702.05488</a>
-								</p>
-							</div>
-						</div>
-						<div class="spotlight alt">
-							<div class="image flush"><img src="images/aperture.png" alt="" /></div>
-							<div class="inner">
-								<h3>Aperture Fitting</h3>
-								<p> While working with Dr. Luger on the Everest Pipeline, I have developed specific methods to remove instrumental noise from <i>K2</i> targets, particularly those with bright neighbors or high motion relative to the CCD.
-								</p>
-								<p> An important task in de-trending <i>K2</i> light curves is maximizing flux from the target star. To do so, I am developing methods to identify ideal apertures around exoplanet targets.
-								</p>
-							</div>
-						</div>
-					</section>
 
-				</div>
-			</section>
+							<div class="box">
+								<a class="image fit"><img src="images/motion.gif" alt="" /></a>
+								<div class="inner">
+									<h3>stellar simulations</h3>
+									<p>As the <i>Kepler</i> Space Telescope runs out of fuel, its motion will increase in magnitude and become less predictable. I created stellar simulations to understand how increased motion affects noise in <i>K2</i> light curves.
+									</p>
+									<a href="https://github.com/nksaunders/skope" class="button style1 fit" target="_top">the code.</a>
+									<a href="files/Example.html" class="button stlye1 fit" target="_blank">examples.</a>
+								</div>
+							</div>
 
-		<!-- Footer -->
-			<footer id="footer">
-				<div class="container">
-					<ul class="icons">
-						<li><a href="mailto:nks1994@uw.edu" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
-					</ul>
-				</div>
-				<div class="copyright">
-					&copy; Nicholas Saunders. All rights reserved. Design template <a href="https://templated.co">TEMPLATED</a>
-				</div>
-			</footer>
+							<div class="box">
+								<a href="" class="image fit"><img src="images/ev.jpg" alt="" /></a>
+								<div class="inner">
+									<h3>everest</h3>
+									<p> I contributed to the development of the Epic Variability Extraction and Removal for Exoplanet Science Targets (Everest) pipeline. Everest was developed by Luger et al. to remove systematic noise from <i>K2</i> light curves. Using a method called Pixel Level Decorrelation (PLD) based on the work of <a href="http://iopscience.iop.org/article/10.1088/0004-637X/805/2/132/pdf">Deming et al. (2015)</a>, we achieved <i>Kepler</i>-like precision in de-trended light curves down to 15<sup>th</sup> magnitude.
+									</p>
+									<a href="https://arxiv.org/pdf/1702.05488.pdf" class="button style3 fit">the paper.</a>
+								</div>
+							</div>
 
+							<div class="box">
+								<a href="" class="image fit"><img src="images/aperture.png" alt="" /></a>
+								<div class="inner">
+									<h3>aperture fitting</h3>
+									<p> While working with Dr. Luger on the Everest Pipeline, I have developed specific methods to remove instrumental noise from <i>K2</i> targets, particularly those with bright neighbors or high motion relative to the CCD.
+									</p>
+									<p> An important task in de-trending <i>K2</i> light curves is maximizing flux from the target star. To do so, I am developing methods to identify ideal apertures around exoplanet targets.
+									</p>
+								</div>
+							</div>
+
+
+			<!-- Footer -->
+				<!--<footer id="footer">
+					<div class="inner">
+						<h2>Etiam veroeros lorem</h2>
+						<p>Pellentesque eleifend malesuada efficitur. Curabitur volutpat dui mi, ac imperdiet dolor tincidunt nec. Ut erat lectus, dictum sit amet lectus a, aliquet rutrum mauris. Etiam nec lectus hendrerit, consectetur risus viverra, iaculis orci. Phasellus eu nibh ut mi luctus auctor. Donec sit amet dolor in diam feugiat venenatis. </p>
+
+						<p class="copyright">&copy; Nicholas Saunders. Design: <a href="https://templated.co">TEMPLATED</a></p>
+					</div>
+				</footer>
+-->
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
