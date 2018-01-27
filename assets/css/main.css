@@ -1168,13 +1168,13 @@
 		display: -webkit-flex;
 		display: -ms-flex;
 		display: flex;
+		background-image: url("images/banner.gif");
 		-moz-justify-content: center;
 		-webkit-justify-content: center;
 		-ms-justify-content: center;
 		justify-content: center;
 		padding: 8em 4em 6em 4em;
 		min-height: 70vh;
-		background-image: url("images/banner.jpg");
 		background-position: center;
 		background-size: cover;
 		background-repeat: no-repeat;
