@@ -542,7 +542,7 @@
 		border-radius: 4px;
 		margin-bottom: 2em;
 		background: #2c2c32;
-		text-align: left;
+		text-align: center;
 	}
 
 		.box > :last-child,
@@ -914,13 +914,6 @@
 				border-top: 0;
 			}
 
-/* Button Box
-
-	#buttonbox {
-		vertical-align: bottom;
-
-	}
-*/
 /* Button */
 
 	input[type="submit"],
@@ -1168,13 +1161,13 @@
 		display: -webkit-flex;
 		display: -ms-flex;
 		display: flex;
-		background-image: url("images/banner.gif");
 		-moz-justify-content: center;
 		-webkit-justify-content: center;
 		-ms-justify-content: center;
 		justify-content: center;
 		padding: 8em 4em 6em 4em;
 		min-height: 70vh;
+		background-image: url("images/banner.gif");
 		background-position: center;
 		background-size: cover;
 		background-repeat: no-repeat;
