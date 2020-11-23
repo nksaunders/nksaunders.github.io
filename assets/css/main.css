@@ -3112,6 +3112,7 @@
 		background-image: url("images/overlay.png"), url("../../images/banner.gif");
 		background-position: center top;
 		background-size: cover;
+		background-repeat: no-repeat;
 		line-height: 1.75;
 		text-align: center;
 	}
