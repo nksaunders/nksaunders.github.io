@@ -53,7 +53,7 @@
 							<div class="6u 12u$(medium)">
 								<header class="major">
 									<h2>About me</h2>
-									<p><b>I am a fifth-year PhD candidate and NSF Graduate Research Fellow at the Institute for Astronomy, University of Hawai‘i at Mānoa.</b></p>
+									<p><b>I am a sixth-year PhD candidate and NSF Graduate Research Fellow at the Institute for Astronomy, University of Hawai‘i at Mānoa.</b></p>
 								</header>
 							</div>
 							<div class="6u$ 12u$(medium)">
@@ -89,20 +89,32 @@
 							<div class="feature">
 							</div>
 							<div class="feature">
+								<div class="image rounded"><img src="images/obliquity.png" alt="" style="width:100%; height:100%"/></div>
+								<div class="content">
+									<header>
+										<h4>Orbital Realignment of Hot Jupiters</h4>
+										<p>Advised by Prof. Dan Huber and Prof. Sam Grunblatt</p>
+									</header>
+									<p>Stellar obliquity—the angle between the spin axis of a star and the vector normal to its planets' orbital plane—provides a crucial opportunity to trace the dynamical history of planetary systems. Observations of hot Jupiters around main-sequence stars have shown that stellar obliquity has a strong dependence on the star's effective temperature, with hot hosts displaying a wide range of obliquities, and cool hosts being preferentially aligned. The critical temperature is approximately at the Kraft break, around 6250 K, corresponding to the divide between stars with primarily radiative envelopes (≳6250 K) and stars with thick convective envelopes (≲6250 K). I identified a population of planetary systems which had not been examined in detail and offered a unique opportunity to investigate the source of these distinct distributions: hot Jupiters orbiting subgiants which were hotter than the Kraft break on the main sequence and have since cooled, crossing the Kraft break.</p>
+									<p>I proposed and executed observations with the 10-meter Keck-1 telescope to measure stellar obliquities for five subgiants hosting hot Jupiters identified by the GTG survey. The sky-projected stellar obliquity can be constrained by taking spectroscopic observations during a planet's transit to observe the Rossiter-McLaughlin (RM) effect. As the planet occults the rotating stellar surface, it imprints a trend in the RV signal. </p>
+									<p>These systems, which were part of a hot (>6200 K), typically misaligned main sequence population, were observed to be aligned after cooling and gaining deep convective envelopes, which are thought to dampen obliquities through tides. I produced stellar evolution models using the MESA code for these host stars to trace the evolution of stellar surface convective zones, and placed an upper limit of ~500 Myr on the timescale for realignment. I have obtained additional stellar obliquity measurements to improve this constraint and shed light on dynamical evolution.</p>
+									<ul class="actions">
+										<li><a href="https://iopscience.iop.org/article/10.3847/1538-3881/ad543b" class="button small">The Paper</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="feature">
 								<div class="image rounded"><img src="images/giants.png" alt="" style="width:100%; height:100%"/></div>
 								<div class="content">
 									<header>
 										<h4>Detecting Planets Around Evolved Stars with <i>TESS</i></h4>
-										<p>Advised by Prof. Dan Huber and Dr. Sam Grunblatt</p>
+										<p>Advised by Prof. Dan Huber and Prof. Sam Grunblatt</p>
 									</header>
 									<p>The explosion of exoplanet detection in the last decade has enabled astronomers to study the underlying characteristics of planet populations. Planets orbiting main-sequence stars have been characterized in detail, however planets orbiting evolved stars remain mysterious due to the small sample of observed transiting planets around post-main-sequence stars.</p>
-									<p>I am conducting a search for planets around evolved stars in the <i>TESS</i> Full Frame Images (FFIs). I wrote a pipeline to quickly remove the scattered light from <i>TESS</i> which uses linear regression to isolate and remove the bright background from light curves. After de-trending the light curve, my pipeline performs a Box Least Squares (BLS) search for transiting planet signals. We selected a sample of subgiant and red giant stars, and have generated and searched over 1,000,000 light curves. Our survey has identified and confirmed <b>fourteen new planets</b> which were not identified by the NASA SPOC or MIT QLP pipelines, and has led to <b>four publications</b> (see below) with multiple upcoming papers in prep.</p>
+									<p>I am conducting a search for planets around evolved stars in the <i>TESS</i> Full Frame Images (FFIs). I wrote a pipeline to quickly remove the scattered light from <i>TESS</i> which uses linear regression to isolate and remove the bright background from light curves. After de-trending the light curve, my pipeline performs a Box Least Squares (BLS) search for transiting planet signals. We selected a sample of subgiant and red giant stars, and have generated and searched over 1,000,000 light curves. Our survey has identified and confirmed <b>seventeen new planets</b> which were not identified by the NASA SPOC or MIT QLP pipelines, and has led to <b>seven publications</b> (see below) with multiple upcoming papers in prep.</p>
 									<ul class="actions">
 										<li><a href="https://github.com/nksaunders/giants" class="button small">The Code</a></li>
-										<li><a href="https://iopscience.iop.org/article/10.3847/1538-3881/ac38a1" class="button small">Paper 1</a></li>
-										<li><a href="https://iopscience.iop.org/article/10.3847/1538-3881/ac4972" class="button small">Paper 2</a></li>
-										<li><a href="https://iopscience.iop.org/article/10.3847/1538-3881/aca670" class="button small">Paper 3</a></li>
-										<li><a href="https://arxiv.org/pdf/2303.06728.pdf" class="button small">Paper 4</a></li>
+										<li><a href="https://ui.adsabs.harvard.edu/public-libraries/AZJgdEbDRF66QORFZmL2Vw" class="button small">The Papers</a></li>
 									</ul>
 								</div>
 							</div>
@@ -114,7 +126,10 @@
 										<p>Advised by Prof. Jen van Saders</p>
 									</header>
 									<p>As stars age, they gradually lose angular momentum through stellar winds, and the rate at which they rotates decreases. Gyrochronology relates the rotation period of a star to its age. The spin-age relationship has been well characterized for young stars using nearby clusers, but remains unreliable for older stars. A population of old stars with faster than expected rotation prompted the theory of "Weakened Magnetic Braking," a stage of stellar evolution during which the star undergoes a magnetic transition that allows it to maintain rapid rotation.</p>
-									<p>With a new sample of benchmark stars with rotation periods measured from asteroseismology, I am creating stellar evolution models to constrain gyrochronology weakened magnetic braking models.</p>
+									<p>I created stellar evolution models with MESA and trained an Artificial Neural Network (ANN) to emulate stellar evolution codes. With a new sample of benchmark stars with rotation periods measured from asteroseismology, I tested gyrochronology relations and found that the WMB scenario best describes the observed rotation rates. Sun-like stars appear to deviate from standard spindown slightly earlier than the age of the sun. I also found that while WMB provides the best fit to the data, it cannot completely describe the rotation behavior beyond solar age.</p>
+									<ul class="actions">
+										<li><a href="https://iopscience.iop.org/article/10.3847/1538-4357/ad1516" class="button small">The Paper</a></li>
+									</ul>
 								</div>
 							</div>
 							<div class="feature">
@@ -246,7 +261,7 @@
 			<footer id="footer">
 				<div class="container">
 					<ul class="copyright" style="font-size:10pt">
-						<li>&copy; Nicholas Saunders 2023</li>
+						<li>&copy; Nicholas Saunders 2024</li>
 						<li>Design adapted from <a style="font-family:monospace; color:#3296d9;" href="http://templated.co">templated</a></li>
 						<li>Background gif by <a href="http://www.spitzer.caltech.edu/mission/profile/82-Tim-Pyle">T. Pyle (NASA JPL)</a></li>
 					</ul>
