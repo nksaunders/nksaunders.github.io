@@ -220,9 +220,9 @@ h1 { margin: 0; font-size: 54px; line-height: 1.1; font-weight: 400; letter-spac
 @media (max-width: 600px) { .kitchen { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 
 .favorites { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; max-width: 760px; }
-@media (max-width: 600px) { .favorites { gap: 10px; } }
+@media (max-width: 600px) { .favorites { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 14px; } }
 .favorites li { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
-.poster { width: 100%; height: auto; aspect-ratio: 2 / 3; object-fit: cover; border-radius: 4px; border: 1px solid var(--rule); margin-bottom: 8px; }
+.poster { width: 100%; height: auto; aspect-ratio: 2 / 3; object-fit: cover; border-radius: 4px; border: 1px solid var(--rule); margin-bottom: 8px; background: var(--panel); color: transparent; overflow: hidden; }
 .poster-card { background: var(--panel); display: flex; flex-direction: column; justify-content: flex-end; gap: 4px; padding: 10px; font-size: 15px; line-height: 1.2; }
 .poster-card small { color: var(--muted); font-size: 13px; }
 .fav-title { font-size: 16px; line-height: 1.3; }

@@ -1,7 +1,10 @@
 # nksaunders.space
 
-Personal academic site, served by GitHub Pages with its built-in Jekyll.
-No theme, no framework: one page (`index.html`), one stylesheet, one script.
+Personal academic site, served by GitHub Pages & Jekyll.
+
+## Notes to self
+
+Ignore below, this is to remind future me how to update my own website.
 
 ## Everyday edits
 
