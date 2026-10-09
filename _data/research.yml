@@ -5,9 +5,10 @@
   figure: /assets/img/giants.webp
   alt: A small planet on a tilted orbit crossing in front of a large red giant star
   text: >-
-    Through the Giants Transiting Giants survey, we've searched over a million
+    Through the Giants Transiting Giants (GTG) survey, we search
     <i>TESS</i> light curves for planets transiting subgiants and red giants,
-    which we confirm and characterize with ground-based radial velocities.
+    which we confirm and characterize with ground-based radial velocities. 
+    Click the link below to find all GTG papers.
   link_label: Giants Transiting Giants
   link: https://ui.adsabs.harvard.edu/public-libraries/AZJgdEbDRF66QORFZmL2Vw
 
