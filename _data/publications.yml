@@ -1,0 +1,64 @@
+# Selected publications, shown newest first in the order written here.
+# Add a new paper by copying a block to the top of the list.
+#   first_author: true  -> marked with a star
+#   "Saunders, N." in `authors` is bolded automatically.
+
+- year: 2025
+  authors: Saunders, N., Grunblatt, S. K., Huber, D., et al.
+  title: A Hot Saturn Orbiting an Oscillating Red Giant Star
+  journal: AJ
+  ref: 169, 75
+  url: https://ui.adsabs.harvard.edu/abs/2025AJ....169...75S
+  first_author: true
+
+- year: 2024
+  authors: Saunders, N., Grunblatt, S. K., Chontos, A., et al.
+  title: Newly Discovered Hot Jupiters Provide Evidence for Efficient Obliquity Damping after the Main Sequence
+  journal: AJ
+  ref: 168, 81
+  url: https://iopscience.iop.org/article/10.3847/1538-3881/ad543b
+  first_author: true
+
+- year: 2024
+  authors: Saunders, N., van Saders, J. L., Lyttle, A. J., et al.
+  title: "Stellar Cruise Control: Weakened Magnetic Braking Leads to Sustained Rapid Rotation of Old Stars"
+  journal: ApJ
+  ref: 962, 138
+  url: https://iopscience.iop.org/article/10.3847/1538-4357/ad1516
+  first_author: true
+
+- year: 2024
+  authors: Grunblatt, S. K., Saunders, N., Huber, D., et al.
+  title: A Low-density Hot Neptune Orbiting a Red Giant Star
+  journal: AJ
+  ref: 168, 1
+  url: https://ui.adsabs.harvard.edu/abs/2024AJ....168....1G
+
+- year: 2023
+  authors: Grunblatt, S. K., Saunders, N., Chontos, A., et al.
+  title: An Eccentric Warm Jupiter Supports a Period–Eccentricity Relation for Giant Planets Transiting Evolved Stars
+  journal: AJ
+  ref: 165, 44
+  url: https://ui.adsabs.harvard.edu/abs/2023AJ....165...44G
+
+- year: 2022
+  authors: Grunblatt, S. K., Saunders, N., Sun, M., et al.
+  title: The Hottest Jupiters Orbiting Evolved Stars
+  journal: AJ
+  ref: 163, 120
+  url: https://ui.adsabs.harvard.edu/abs/2022AJ....163..120G
+
+- year: 2022
+  authors: Saunders, N., Grunblatt, S. K., Huber, D., et al.
+  title: A Noninflated Hot Jupiter Orbiting a Massive Subgiant
+  journal: AJ
+  ref: 163, 53
+  url: https://ui.adsabs.harvard.edu/abs/2022AJ....163...53S
+  first_author: true
+
+- year: 2022
+  authors: Stello, D., Saunders, N., Grunblatt, S., et al.
+  title: TESS Asteroseismology of the Kepler Red Giants
+  journal: MNRAS
+  ref: "512"
+  url: https://ui.adsabs.harvard.edu/search/q=author%3A%22Stello%2C%20D%22%20title%3A%22TESS%20asteroseismology%20of%20the%20Kepler%20red%20giants%22

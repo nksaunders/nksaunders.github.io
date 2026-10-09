@@ -1,0 +1,47 @@
+# Content for the Off-sky page (/off-sky/). Photos go in assets/img/personal/.
+# Any item without an `image` shows a grey placeholder with its label.
+
+intro: >-
+  When the dome is closed, I spend most of my time with The Creatures (pictured below) who live with me and my partner, Brittany. 
+  You'll often find us watching movies. I de-stress by cooking an elaborate meal and cleaning the kitchen. 
+  I play the violin (too infrequently), but more often I cover my favorite sad songs on guitar. 
+
+pets:
+  - name: "Marty"
+    note: "Breed: just a little guy."
+    image: /assets/img/personal/marty.webp
+  - name: "Rya"
+    note: "Likes: scaring Marty. Dislikes: being near Marty."
+    image: /assets/img/personal/rya.webp
+
+films_intro: >-
+  Alongside my BS in Astronomy & Physics, I earned a BA in Cinema Studies. 
+  Film history fascinates me, I believe movies give you the clearest indication of what occupies peoples' minds in a given place and time.<br>
+  Here, you can find my current favorites. Movies I can't get out of my head. Below, I list my top 10 films for each decade (back to the 1920s).<br>
+  <i>Disclaimer: my taste is subjective and sometimes bad. I just like watching movies.</i>
+
+letterboxd:         #https://letterboxd.com/nksaunders/
+
+kitchen:          # shown as a 3-across grid; the label appears on hover
+  - label: "Halloween focaccia"
+    image: /assets/img/personal/halloween-focaccia.webp
+  - label: "Satay chicken bowl"
+    image: /assets/img/personal/satay-chicken.webp
+  - label: "Kimchi jjigae"
+    image: /assets/img/personal/kimchi-jjigae.webp
+  - label: "Confit garlic focaccia"
+    image: /assets/img/personal/garlic-focaccia.webp
+  - label: "Homemade dips"
+    image: /assets/img/personal/dips.webp
+  - label: "Caramelized pork bowl"
+    image: /assets/img/personal/caramelized-pork.webp
+  - label: "Kakuni and ramen"
+    image: /assets/img/personal/kakuni-ramen.webp
+  - label: "Butternut squash soup"
+    image: /assets/img/personal/squash-soup.webp
+  - label: "Honey garlic chicken"
+    image: /assets/img/personal/honey-garlic-chicken.webp
+
+outdoors:
+  - label: "[Mountain photo]"
+    image:

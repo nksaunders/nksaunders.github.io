@@ -1,0 +1,30 @@
+# Research areas on the homepage. Figures live in assets/img/ (1370x1000, transparent).
+# figure_night (optional) is shown in night mode instead of figure.
+
+- title: Planets around evolved stars
+  figure: /assets/img/giants.webp
+  alt: A small planet on a tilted orbit crossing in front of a large red giant star
+  text: >-
+    Through the Giants Transiting Giants survey, we've searched over a million
+    <i>TESS</i> light curves for planets transiting subgiants and red giants,
+    which we confirm and characterize with ground-based radial velocities.
+  link_label: Giants Transiting Giants
+  link: https://ui.adsabs.harvard.edu/public-libraries/AZJgdEbDRF66QORFZmL2Vw
+
+- title: Obliquities and tidal realignment
+  figure: /assets/img/obliquity.webp
+  alt: Diagram of a planet's tilted orbit across a rotating star, half blueshifted and half redshifted, with the spin axis and obliquity angle marked
+  text: >-
+    Keck/HIRES & KPF Rossiter–McLaughlin measurements of hot Jupiters whose hosts have
+    cooled across the Kraft break, timing how quickly tides realign their orbits.
+  link_label: Obliquity damping
+  link: https://iopscience.iop.org/article/10.3847/1538-3881/ad543b
+
+- title: Stellar ages and rotation
+  figure: /assets/img/ages.webp
+  alt: A star drawn as a clock face
+  text: >-
+    Asteroseismic tests of gyrochronology show that weakened magnetic braking
+    keeps old Sun-like stars spinning fast.
+  link_label: Stellar cruise control
+  link: https://iopscience.iop.org/article/10.3847/1538-4357/ad1516

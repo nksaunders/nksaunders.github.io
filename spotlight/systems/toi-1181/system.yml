@@ -1,0 +1,38 @@
+# TOI-1181 b — GTG VI (Saunders et al. 2024, AJ 168, 81), Table 2.
+name: TOI-1181 b
+description: Hot Jupiter orbiting a subgiant
+paper:
+  label: GTG VI · Saunders et al. 2024
+  url: https://iopscience.iop.org/article/10.3847/1538-3881/ad543b
+order: 2
+
+orbit:
+  period: 2.103189
+  period_err: 0.000005
+  t0: 2481.51696
+  rp_rs: 0.07947
+  a_rs: 3.976
+  cos_i: 0.018
+  secosw: -0.040
+  sesinw: 0.042
+  ecc: 0.011
+
+transit:
+  data: tess.csv
+  q: [0.119, 0.156]
+  bin_minutes: 20
+  tweak: {b: 0.27, rp_rs: 0.076, u: [0.35, 0.43]}   # chi-by-eye, display only
+
+rv:
+  K: 146
+  data:
+    - {file: hires.csv, label: HIRES, scale: 1000}
+
+rm:
+  data: hires_rm.csv       # HIRES, 2020-09-08
+  scale: 1000
+  lambda_deg: -1.5
+  lambda_err: 15.6
+  vsini_kms: 12.96
+  u: [0.55, 0.2]           # approximate HIRES-band limb darkening
+  tweak: {b: 0.4, vsini_kms: 14, shift_minutes: 4}     # chi-by-eye, display only

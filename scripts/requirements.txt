@@ -1,0 +1,6 @@
+numpy
+pyyaml
+openpyxl        # only for .xlsx film lists
+jaxoplanet      # transit + orbit geometry for Spotlight models (batman-package also works)
+lightkurve      # light curves
+giants @ git+https://github.com/nksaunders/giants   # Spotlight light curves

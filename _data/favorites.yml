@@ -1,0 +1,19 @@
+# "Current Favorites" — the four-poster row on the Off-sky page, in order.
+# After changing this list, run  python scripts/fetch_posters.py  to look up
+# the posters on TMDB (needs a free API key; see the script).
+
+- title: The Apartment
+  year: 1960
+  director: Billy Wilder
+
+- title: Perfect Blue
+  year: 1997
+  director: Satoshi Kon
+
+- title: In the Mood for Love
+  year: 2000
+  director: Wong Kar-Wai
+
+- title: Midnight Run
+  year: 1988
+  director: Martin Brest

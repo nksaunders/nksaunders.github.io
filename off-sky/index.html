@@ -1,0 +1,113 @@
+---
+---
+<!doctype html>
+<html lang="en" data-theme="day">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Off-sky · {{ site.title }}</title>
+  <meta name="description" content="What I get up to when the dome is closed.">
+  <link rel="canonical" href="{{ site.url }}/off-sky/">
+{% include head.html %}
+</head>
+<body>
+
+{% include topbar.html %}
+
+<main class="offsky">
+  <section class="wrap page-head">
+    <p class="eyebrow">Off-sky</p>
+    <h1>Clouded out.</h1>
+    <p class="lede">{{ site.data.personal.intro }}</p>
+  </section>
+
+  <section class="wrap os-section" aria-labelledby="creatures">
+    <h2 class="label" id="creatures">The creatures</h2>
+    <div class="pets">
+      {% for p in site.data.personal.pets %}
+      <figure class="pet">
+        {% if p.image %}<img src="{{ p.image }}" alt="{{ p.name }}" loading="lazy">{% else %}<div class="ph ph-square"><span>{{ p.name }}</span></div>{% endif %}
+        <figcaption><b>{{ p.name }}</b>{% if p.note %}<span>{{ p.note }}</span>{% endif %}</figcaption>
+      </figure>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="wrap os-section" aria-labelledby="films">
+    <h2 class="label" id="films">Films</h2>
+    <p class="os-text">{{ site.data.personal.films_intro }}</p>
+
+    <h3 class="sublabel">Current Favorites</h3>
+    <ol class="favorites">
+      {% for f in site.data.favorites %}
+      {% capture k %}{{ f.title }} ({{ f.year }}){% endcapture %}
+      {% assign p = site.data.posters[k] %}
+      <li>
+        {% if p %}<img class="poster" src="https://image.tmdb.org/t/p/w342{{ p.poster }}" alt="Poster for {{ f.title }} ({{ f.year }})" width="342" height="513" loading="lazy">{% else %}<div class="poster poster-card" aria-hidden="true"><span>{{ f.title }}</span><small>{{ f.year }}</small></div>{% endif %}
+        <span class="fav-title">{{ f.title }}</span>
+        <span class="fav-meta">({{ f.year }}) dir. {{ f.director }}</span>
+      </li>
+      {% endfor %}
+    </ol>
+
+    <h3 class="sublabel">Top ten by decade</h3>
+    <div class="decades">
+      {% for d in site.data.decades %}
+      <details>
+        <summary><span class="dec">{{ d.decade }}</span></summary>
+        <ol>
+          {% for f in d.films %}
+          <li><span class="film-title">{{ f.title }}</span> <span class="fav-meta">({{ f.year }}) dir. {{ f.director }}</span></li>
+          {% endfor %}
+        </ol>
+      </details>
+      {% endfor %}
+    </div>
+
+    {% assign cage = "Vampire's Kiss|Con Air|Face/Off" | split: "|" %}
+    {% for b in site.data.film_bonus %}
+    {% assign ncage = 0 %}{% for f in b.films %}{% if cage contains f.title %}{% assign ncage = ncage | plus: 1 %}{% endif %}{% endfor %}
+    <details class="bonus">
+      <summary>{{ b.bonus }}</summary>
+      <ol>
+        {% for f in b.films %}
+        <li><span class="film-title">{{ f.title }}</span> <span class="fav-meta">({{ f.year }}) dir. {{ f.director }}</span>{% if cage contains f.title %}<span class="cage" tabindex="0" aria-label="Cage count: {{ ncage }} of {{ b.films.size }}">·<span class="cage-pop" aria-hidden="true"><img src="/assets/img/personal/cage.webp" alt="" loading="lazy" width="120" height="120"><span>Cage count: {{ ncage }} of {{ b.films.size }}</span></span></span>{% endif %}</li>
+        {% endfor %}
+      </ol>
+    </details>
+    {% endfor %}
+
+    <p class="credit">
+      {% if site.data.personal.letterboxd %}<a href="{{ site.data.personal.letterboxd }}">Full diary on Letterboxd →</a><br>{% endif %}
+      Posters from <a href="https://www.themoviedb.org/">TMDB</a>. This site uses the TMDB API but is not endorsed or certified by TMDB.
+    </p>
+  </section>
+  
+  <section class="wrap os-section" aria-labelledby="kitchen">
+    <h2 class="label" id="kitchen">From the kitchen</h2>
+    <div class="kitchen">
+      {% for k in site.data.personal.kitchen %}
+      <figure tabindex="0">
+        {% if k.image %}<img src="{{ k.image }}" alt="{{ k.label }}" loading="lazy">{% else %}<div class="ph ph-square"><span>{{ k.label }}</span></div>{% endif %}
+        {% if k.image %}<figcaption>{{ k.label }}</figcaption>{% endif %}
+      </figure>
+      {% endfor %}
+    </div>
+  </section>
+
+<!--
+  <section class="wrap os-section os-last" aria-labelledby="outdoors">
+    <h2 class="label" id="outdoors">Outdoors</h2>
+    {% for o in site.data.personal.outdoors %}
+    <figure class="wide">
+      {% if o.image %}<img src="{{ o.image }}" alt="{{ o.label }}" loading="lazy">{% else %}<div class="ph ph-wide"><span>{{ o.label }}</span></div>{% endif %}
+    </figure>
+    {% endfor %}
+  </section>
+ -->
+</main>
+
+{% include footer.html %}
+
+</body>
+</html>

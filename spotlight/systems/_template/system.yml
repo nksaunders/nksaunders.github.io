@@ -1,0 +1,53 @@
+# Copy this folder to spotlight/systems/<slug>/ (no leading underscore),
+# drop the data files next to it, fill this in, then run
+#     python scripts/build_spotlight.py --plots
+# and check spotlight/quicklook/<slug>.png before committing.
+#
+# Times may be BJD or BTJD (converted automatically). Data formats understood:
+#   csv     '#time,flux,flux_err'   (light curves; Keck RVs in km/s -> scale: 1000)
+#   radvel  'time mnvel errvel tel'  (m/s; use tel: to pick one instrument)
+#   feros   'ID BJD RV RVe ...'      (m/s)
+#   ts      'time flux'              (no header)
+
+name: TOI-0000 b
+description: Hot Jupiter orbiting a subgiant      # one short line
+paper:
+  label: GTG X · Saunders et al. 2027
+  url: https://ui.adsabs.harvard.edu/abs/...
+order: 10                  # lower numbers first in the shuffle
+
+orbit:                     # from the paper
+  period: 5.0              # d
+  period_err: 0.0001       # optional; lets the build refine the fold
+  t0: 3000.0               # mid-transit
+  rp_rs: 0.06
+  a_rs: 6.0
+  b: 0.3                   # or cos_i: / inc_deg:
+  ecc: 0.0                 # or secosw: / sesinw:
+  w_deg: 90
+
+transit:
+  data: tess.csv           # giants light curve (scripts/giants_lightcurve.py makes one)
+  q: [0.3, 0.3]            # TESS limb darkening (or u: [u1, u2])
+  bin_minutes: 30
+  # refine: false          # keep the paper ephemeris exactly
+  # time_range: [2800, 3300]   # BTJD; only fold these data
+  # tweak: {b: 0.3, rp_rs: 0.06, u: [0.4, 0.2], shift_minutes: 0}   # chi-by-eye, display only
+
+rv:                        # optional: the "Orbit" tab
+  K: 100                   # m/s
+  data:
+    - {file: hires.csv, label: HIRES, scale: 1000, jitter: 0}   # jitter (m/s) added in quadrature
+    # - {file: rvs.txt, label: PFS, tel: j}
+  # exclude_transit: true  # drop in-transit epochs from the orbit plot
+
+rm:                        # optional: the "Obliquity" tab
+  data: hires_rm.csv       # in-transit RVs (the orbit is removed using rv.K)
+  scale: 1000
+  # jitter: 0              # m/s, added in quadrature
+  lambda_deg: 0
+  lambda_err: 10
+  vsini_kms: 10
+  u: [0.55, 0.2]           # spectrograph-band limb darkening (or q:)
+  # slope: true            # also remove a linear trend over the night
+  # tweak: {b: 0.3, vsini_kms: 10, shift_minutes: 0}   # chi-by-eye, display only

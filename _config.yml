@@ -1,0 +1,25 @@
+# Site settings — GitHub Pages builds this with Jekyll automatically on push.
+title: Nicholas Saunders
+description: >-
+  Nicholas Saunders, YCAA Prize Postdoctoral Fellow at Yale University,
+  studies how planetary systems evolve as their host stars age.
+url: https://nksaunders.space
+email: nicholas.saunders@yale.edu
+
+# Google Analytics 4 measurement ID (G-XXXXXXXXXX). Leave blank for no analytics.
+ga4_id:
+
+links:
+  cv: /files/nsaunders_cv.pdf
+  ads: https://ui.adsabs.harvard.edu/public-libraries/YuVwCY9TTe2mgyu3gSgVIA
+  github: https://github.com/nksaunders
+
+# Source folders for the System Spotlight pipeline are not part of the site.
+exclude:
+  - spotlight
+  - films
+  - scripts
+  - README.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock

@@ -1,0 +1,38 @@
+# TIC 139474683 b — GTG IX. Medians from RM_fit_refactor/refactor_fit_sqrte (jaxoplanet joint fit).
+name: TIC 139474683 b
+description: Hot Saturn orbiting a subgiant
+paper:
+  label: GTG IX · Saunders et al. (submitted)
+  url: https://ui.adsabs.harvard.edu/public-libraries/AZJgdEbDRF66QORFZmL2Vw
+order: 1
+
+orbit:
+  period: 3.204423
+  period_err: 0.0000025
+  t0: 3645.9416            # BTJD (2460645.9416 BJD)
+  rp_rs: 0.0921
+  a_rs: 5.16
+  b: 0.326
+  ecc: 0.064
+  w_deg: 28.6
+
+transit:
+  data: tess.csv           # giants light curve
+  q: [0.314, 0.222]        # TESS
+  bin_minutes: 30
+  tweak: {rp_rs: 0.094, a_rs: 5.3, u: [0.15, 0.36]}   # chi-by-eye, display only
+
+rv:
+  K: 55.4
+  exclude_transit: true    # the paper drops the 3 in-transit HIRES epochs
+  data:
+    - {file: hires.csv, label: HIRES, scale: 1000, jitter: 22.9}   # km/s -> m/s; jitter (m/s) from the fit
+
+rm:
+  data: kpf_rm.csv         # KPF, 2024-11-30
+  scale: 1000
+  jitter: 8.1              # KPF jitter (m/s) from the fit
+  lambda_deg: -10.1
+  lambda_err: 8.7
+  vsini_kms: 11.75
+  q: [0.829, 0.685]        # KPF

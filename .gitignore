@@ -1,2 +1,7 @@
 .DS_Store
-images/.DS_Store
+_site/
+.jekyll-cache/
+.sass-cache/
+__pycache__/
+_preview/
+spotlight/quicklook/

@@ -1,0 +1,27 @@
+# Students mentored, most recent first.
+#   next: where they went afterward (optional, shown as "→ next")
+#   outputs: papers, posters, talks from the project (optional), each {label, url}
+
+- years: 2026–
+  name: Ryan Purviance
+  institution: Amherst College
+  program: Yale summer internship
+
+- years: 2025–
+  name: Vihaan Iyer
+  institution: Ridge High School
+  program: Independent research project
+
+- years: "2023"
+  name: Alicia Chun
+  institution: University of Chicago
+  program: UH Research Experience for Undergraduates
+  outputs:
+    - label: AAS 243 Poster
+      url: https://aas243-aas.ipostersessions.com/Default.aspx?s=DB-1E-9A-81-17-83-30-A0-76-E9-72-FA-FB-06-D6-2B
+
+- years: "2023"
+  name: Anica Ancheta
+  institution: Baldwin High School
+  next: Caltech
+  program: HI STAR summer research

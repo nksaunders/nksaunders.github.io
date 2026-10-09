@@ -1,0 +1,37 @@
+# TOI-6029 b — GTG VI (Saunders et al. 2024, AJ 168, 81), Table 2.
+name: TOI-6029 b
+description: Hot Jupiter orbiting a subgiant
+paper:
+  label: GTG VI · Saunders et al. 2024
+  url: https://iopscience.iop.org/article/10.3847/1538-3881/ad543b
+order: 4
+
+orbit:
+  period: 5.7987
+  period_err: 0.0004
+  t0: 2667.067
+  rp_rs: 0.056
+  a_rs: 7.17
+  cos_i: 0.023
+  secosw: -0.130
+  sesinw: -0.040
+  ecc: 0.091
+
+transit:
+  data: tess.csv
+  q: [0.041, 0.767]
+  bin_minutes: 30
+
+rv:
+  K: 137
+  data:
+    - {file: hires.csv, label: HIRES, scale: 1000}
+
+rm:
+  data: hires_rm.csv       # HIRES, 2022-09-18 (egress lost to weather)
+  scale: 1000
+  lambda_deg: -14.4
+  lambda_err: 15
+  vsini_kms: 11.38
+  u: [0.55, 0.2]           # approximate HIRES-band limb darkening
+  tweak: {b: 0.4, vsini_kms: 13.5, shift_minutes: -15}   # chi-by-eye, display only

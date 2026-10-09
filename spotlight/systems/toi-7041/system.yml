@@ -1,0 +1,32 @@
+# TOI-7041 b — GTG VII (Saunders et al. 2025, AJ 169, 75), Tables 1–2. No RM measurement.
+name: TOI-7041 b
+description: Hot Saturn orbiting an oscillating red giant
+paper:
+  label: GTG VII · Saunders et al. 2025
+  url: https://ui.adsabs.harvard.edu/abs/2025AJ....169...75S
+order: 5
+
+orbit:
+  period: 9.691
+  period_err: 0.006
+  t0: 3160.393             # BTJD (2460160.393 BJD)
+  rp_rs: 0.0256
+  a_rs: 4.8
+  b: 0.2
+  ecc: 0.04
+  w_deg: 131
+
+transit:
+  data: tess_s69.fits      # Sector 69, 200-s FFI light curve
+  detrend_hours: 36        # running median, transit masked (removes granulation/oscillation trends)
+  u: [0.55, 0.15]          # not reported; typical TESS-band values for a red giant
+  bin_minutes: 60
+  dilution: auto           # this FFI light curve is ~30% shallower than the paper's Rp/R*
+  refine: false            # one sector next to t0: keep the paper ephemeris
+
+rv:
+  K: 36.2
+  data:
+    - {file: chiron.txt, label: CHIRON}
+    - {file: feros.txt, label: FEROS}
+    - {file: pfs.txt, label: PFS}

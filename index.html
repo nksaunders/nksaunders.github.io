@@ -1,278 +1,129 @@
-<!DOCTYPE HTML>
-<!--
-	Spatial by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
--->
-<html>
-	<head>
-		<title>Nicholas Saunders</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="icon" href="images/icon.png">
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-130484252-1"></script>
-		<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
-		  gtag('config', 'UA-130484252-1');
-		</script>
-	</head>
-	<body class="landing">
+---
+---
+<!doctype html>
+<html lang="en" data-theme="day">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ site.title }} · Exoplanets and Stars · Yale University</title>
+  <meta name="description" content="{{ site.description | strip }}">
+  <meta property="og:title" content="{{ site.title }}">
+  <meta property="og:description" content="{{ site.description | strip }}">
+  <meta property="og:image" content="{{ site.url }}/assets/img/headshot.jpg">
+  <meta property="og:url" content="{{ site.url }}">
+  <link rel="canonical" href="{{ site.url }}/">
+{% include head.html %}
+</head>
+<body>
 
-		<!-- Header -->
-			<header id="header" class="alt">
-				<nav id="nav">
-					<ul>
-						<li><a href="#research">Research</a></li>
-						<li><a href="#codes">Software</a></li>
-						<li><a href="#outreach">Outreach</a></li>
-					</ul>
-				</nav>
-			</header>
+{% include topbar.html %}
 
-			<a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+<main>
+  <section class="hero wrap">
+    <div class="hero-text">
+      <p class="eyebrow">Nicholas Saunders · Yale University</p>
+      <h1>Planets across the full<br>lifetimes of their stars.</h1>
+      <p class="lede">I'm a YCAA Prize Postdoctoral Fellow studying how planetary systems evolve as their host stars age. I primarily search <i>TESS</i> observations for planets around subgiant and red giant stars, then use Keck to measure their masses and characterize their orbits.</p>
+      <div class="buttons">
+        <a class="btn btn-primary" href="{{ site.links.cv }}">CV</a>
+        <a class="btn" href="{{ site.links.ads }}">Papers (ADS)</a>
+        <a class="btn" href="{{ site.links.github }}">GitHub</a>
+        <a class="btn" href="mailto:{{ site.email }}">Email</a>
+      </div>
+    </div>
+    <picture class="headshot">
+      <source srcset="/assets/img/headshot.webp" type="image/webp">
+      <img src="/assets/img/headshot.jpg" alt="Nicholas Saunders" width="640" height="640">
+    </picture>
+  </section>
 
-		<!-- Banner -->
-			<section id="banner">
-				<h2>Nicholas Saunders</h2>
-				<p>YCAA Prize Postdoctoral Fellow • Exoplanets and Stars <br /> Yale University</p>
-				<ul class="actions">
-					<li><a href="files/nsaunders_cv.pdf" class="button special small">CV</a></li>
-					<li><a href="https://ui.adsabs.harvard.edu/public-libraries/YuVwCY9TTe2mgyu3gSgVIA" class="button special small">Papers</a></li>
-					<li><a href="https://github.com/nksaunders" class="button special small">GitHub</a></li>
-					<li><a href="mailto:saunders.nk@gmail.com" class="button special small">Contact</a></li>
-				</ul>
-			</section>
+  <section id="research" class="band">
+    <div class="wrap">
+      <h2 class="label">Research</h2>
+      <div class="research-grid">
+        {% for r in site.data.research %}
+        <article class="research-card">
+          <figure>
+            <div class="plate">
+              <img class="{% if r.figure_night %}fig-day{% endif %}" src="{{ r.figure }}" alt="{{ r.alt }}" loading="lazy">
+              {% if r.figure_night %}<img class="fig-night" src="{{ r.figure_night }}" alt="{{ r.alt }}" loading="lazy">{% endif %}
+            </div>
+          </figure>
+          <h3>{{ forloop.index }}. {{ r.title }}</h3>
+          <p>{{ r.text }}</p>
+          <a class="more" href="{{ r.link }}">{{ r.link_label }} →</a>
+        </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
 
-			<!-- One -->
-				<section id="about" class="wrapper style1">
-					<div class="container 75%">
-						<div class="row 200%">
-							<div class="6u 12u$(medium)">
-								<header class="major">
-									<h2>About me</h2>
-									<p><b>I am a YCAA Prize Postdoctoral Fellow at Yale University. I earned my PhD from the Institute for Astronomy, University of Hawai‘i at Mānoa.</b></p>
-								</header>
-							</div>
-							<div class="6u$ 12u$(medium)">
-								<p><span class="image right"><img src="images/saunders_image.png" alt="" /></span>My primary research interest is understanding the full lifetime of exoplanets. Currently, I study their evolution by detecting planets around evolved stars and developing methods to better constrain the ages of exoplanet host stars.</p>
-								<p> Before I arrived in Hawaii, I was a <b>research support scientist</b> at the Kepler/K2 Guest Observer Office at NASA Ames. </p>
+  <section class="wrap split">
+    <div id="publications" class="col-main">
+      <div class="label-row">
+        <h2 class="label">Selected publications</h2>
+        <span class="label-aside">★ first author · <a href="{{ site.links.ads }}">full list →</a></span>
+      </div>
+      <ol class="pubs">
+        {% for p in site.data.publications %}
+        <li>{% if p.first_author %}<span class="star" aria-label="First author">★</span>{% endif %}{{ p.authors | replace: "Saunders, N.", "<b>Saunders, N.</b>" }} {{ p.year }}, <a href="{{ p.url }}">{{ p.title }}</a>, <i>{{ p.journal }}</i> {{ p.ref }}</li>
+        {% endfor %}
+      </ol>
+    </div>
 
-								<p>For my undergraduate degrees, I attended the University of Washington in Seattle. I earned a <b>B.S. in Astronomy and Physics</b>, and a <b>B.A. in Comparative Literature</b> (with an emphasis on Cinema Studies), and I was a member of the Washington NASA Space Grant Consortium. </p>
-							</div>
-						</div>
-					</div>
-				</section>
+    <div id="spotlight" class="col-side">
+      <h2 class="label">System Spotlight</h2>
+      <aside class="spotlight" aria-label="System spotlight" data-src="/assets/data/spotlight.json?v={{ site.time | date: '%s' }}">
+        <div class="sp-head">
+          <div>
+            <div class="sp-name" id="sp-name">Loading…</div>
+            <div class="sp-desc" id="sp-desc">&nbsp;</div>
+          </div>
+          <button type="button" class="sp-shuffle" id="sp-shuffle" aria-label="Show another system">
+            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 3h5v5"/><path d="M4 20 21 3"/><path d="M21 16v5h-5"/><path d="M15 15l6 6"/><path d="M4 4l5 5"/></svg>
+          </button>
+        </div>
+        <div class="sp-tabs" role="group" aria-label="Plot">
+          <button type="button" class="sp-tab" data-tab="transit" aria-pressed="true">Transit</button>
+          <button type="button" class="sp-tab" data-tab="rv" aria-pressed="false">Orbit</button>
+          <button type="button" class="sp-tab" data-tab="rm" aria-pressed="false">Obliquity</button>
+        </div>
+        <div class="sp-plot" id="sp-plot">
+          <noscript><p class="sp-empty">Turn on JavaScript to see a transit from the survey.</p></noscript>
+        </div>
+        <div class="sp-caption" id="sp-caption"></div>
+        <div class="sp-foot">
+          <a id="sp-paper" href="{{ site.links.ads }}">&nbsp;</a>
+          <span id="sp-count"></span>
+        </div>
+        <p class="sp-disclaimer">These curves are tuned by eye for display. See each paper for the actual fits and uncertainties.</p>
+        <p class="sp-note" id="sp-note" hidden>Illustrative data — replace by running scripts/build_spotlight.py.</p>
+      </aside>
+    </div>
+  </section>
 
-				<!-- Four -->
-					<section id="cv-space" class="wrapper style3 special">
-						<div class="container">
-							<header class="major">
-								<p>View my CV for more information.</p>
-							</header>
-							<ul class="actions">
-								<li><a href="files/nsaunders_cv.pdf" class="button special">CV</a></li>
-							</ul>
-						</div>
-					</section>
+  <section class="wrap split">
+    <div class="col-main">
+      <h2 class="label">Mentoring</h2>
+      <dl class="mentoring">
+        {% for m in site.data.mentoring %}
+        <dt>{{ m.years }}</dt>
+        <dd>{{ m.name }}, {{ m.institution }}{% if m.next %} (→ {{ m.next }}){% endif %}<br><span>{{ m.program }}</span>{% if m.outputs %}<br><span class="outputs">{% for o in m.outputs %}<a href="{{ o.url }}">{{ o.label }}</a>{% unless forloop.last %} · {% endunless %}{% endfor %}</span>{% endif %}</dd>
+        {% endfor %}
+      </dl>
+    </div>
+    <div id="software" class="col-side">
+      <h2 class="label">Software</h2>
+      <ul class="software">
+        {% for s in site.data.software %}
+        <li><a class="code" href="{{ s.url }}">{{ s.name }}</a> — {{ s.role }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+</main>
 
-			<!-- Three -->
-				<section id="research" class="wrapper style1">
-					<div class="container">
-						<header class="major special">
-							<h2>Research Projects</h2>
-							<p>Completed and ongoing research</p>
-						</header>
-						<div class="feature-grid">
-							<div class="feature">
-							</div>
-							<div class="feature">
-								<div class="image rounded"><img src="images/obliquity.png" alt="" style="width:100%; height:100%"/></div>
-								<div class="content">
-									<header>
-										<h4>Orbital Realignment of Hot Jupiters</h4>
-										<p>Advised by Prof. Dan Huber and Prof. Sam Grunblatt</p>
-									</header>
-									<p>Stellar obliquity—the angle between the spin axis of a star and the vector normal to its planets' orbital plane—provides a crucial opportunity to trace the dynamical history of planetary systems. Observations of hot Jupiters around main-sequence stars have shown that stellar obliquity has a strong dependence on the star's effective temperature, with hot hosts displaying a wide range of obliquities, and cool hosts being preferentially aligned. The critical temperature is approximately at the Kraft break, around 6250 K, corresponding to the divide between stars with primarily radiative envelopes (≳6250 K) and stars with thick convective envelopes (≲6250 K). I identified a population of planetary systems which had not been examined in detail and offered a unique opportunity to investigate the source of these distinct distributions: hot Jupiters orbiting subgiants which were hotter than the Kraft break on the main sequence and have since cooled, crossing the Kraft break.</p>
-									<p>I proposed and executed observations with the 10-meter Keck-1 telescope to measure stellar obliquities for five subgiants hosting hot Jupiters identified by the GTG survey. The sky-projected stellar obliquity can be constrained by taking spectroscopic observations during a planet's transit to observe the Rossiter-McLaughlin (RM) effect. As the planet occults the rotating stellar surface, it imprints a trend in the RV signal. </p>
-									<p>These systems, which were part of a hot (>6200 K), typically misaligned main sequence population, were observed to be aligned after cooling and gaining deep convective envelopes, which are thought to dampen obliquities through tides. I produced stellar evolution models using the MESA code for these host stars to trace the evolution of stellar surface convective zones, and placed an upper limit of ~500 Myr on the timescale for realignment. I have obtained additional stellar obliquity measurements to improve this constraint and shed light on dynamical evolution.</p>
-									<ul class="actions">
-										<li><a href="https://iopscience.iop.org/article/10.3847/1538-3881/ad543b" class="button small">The Paper</a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="feature">
-								<div class="image rounded"><img src="images/giants.png" alt="" style="width:100%; height:100%"/></div>
-								<div class="content">
-									<header>
-										<h4>Detecting Planets Around Evolved Stars with <i>TESS</i></h4>
-										<p>Advised by Prof. Dan Huber and Prof. Sam Grunblatt</p>
-									</header>
-									<p>The explosion of exoplanet detection in the last decade has enabled astronomers to study the underlying characteristics of planet populations. Planets orbiting main-sequence stars have been characterized in detail, however planets orbiting evolved stars remain mysterious due to the small sample of observed transiting planets around post-main-sequence stars.</p>
-									<p>I am conducting a search for planets around evolved stars in the <i>TESS</i> Full Frame Images (FFIs). I wrote a pipeline to quickly remove the scattered light from <i>TESS</i> which uses linear regression to isolate and remove the bright background from light curves. After de-trending the light curve, my pipeline performs a Box Least Squares (BLS) search for transiting planet signals. We selected a sample of subgiant and red giant stars, and have generated and searched over 1,000,000 light curves. Our survey has identified and confirmed <b>seventeen new planets</b> which were not identified by the NASA SPOC or MIT QLP pipelines, and has led to <b>seven publications</b> (see below) with multiple upcoming papers in prep.</p>
-									<ul class="actions">
-										<li><a href="https://github.com/nksaunders/giants" class="button small">The Code</a></li>
-										<li><a href="https://ui.adsabs.harvard.edu/public-libraries/AZJgdEbDRF66QORFZmL2Vw" class="button small">The Papers</a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="feature">
-								<div class="image rounded"><img src="images/wmb.png" alt="" style="width:100%; height:100%"/></div>
-								<div class="content">
-									<header>
-										<h4>Constraining Weakened Magnetic Braking with Asteroseismic Rotation Rates</h4>
-										<p>Advised by Prof. Jen van Saders</p>
-									</header>
-									<p>As stars age, they gradually lose angular momentum through stellar winds, and the rate at which they rotates decreases. Gyrochronology relates the rotation period of a star to its age. The spin-age relationship has been well characterized for young stars using nearby clusers, but remains unreliable for older stars. A population of old stars with faster than expected rotation prompted the theory of "Weakened Magnetic Braking," a stage of stellar evolution during which the star undergoes a magnetic transition that allows it to maintain rapid rotation.</p>
-									<p>I created stellar evolution models with MESA and trained an Artificial Neural Network (ANN) to emulate stellar evolution codes. With a new sample of benchmark stars with rotation periods measured from asteroseismology, I tested gyrochronology relations and found that the WMB scenario best describes the observed rotation rates. Sun-like stars appear to deviate from standard spindown slightly earlier than the age of the sun. I also found that while WMB provides the best fit to the data, it cannot completely describe the rotation behavior beyond solar age.</p>
-									<ul class="actions">
-										<li><a href="https://iopscience.iop.org/article/10.3847/1538-4357/ad1516" class="button small">The Paper</a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="feature">
-								<div class="image rounded"><img src="images/motion.gif" alt="" style="width:100%; height:100%"/></div>
-								<div class="content">
-									<header>
-										<h4>Creating High-precision <i>K2</i> Light Curves</h4>
-										<p>Advised by Prof. Rory Barnes and Dr. Rodrigo Luger</p>
-									</header>
-									<p>When the <i>Kepler</i> space telescope lost two of its four reaction wheels, the spacecraft lost the fine pointing necessary for high precision photometry. Engineers were able to reorient the telescope to observe along the ecliptic plane, held stable by the photon pressure from the solar wind, and the mission entered a second phase called <i>K2</i>. However, the spacecraft maintained a slow drift and was re-oriented every 6 hours by a stabilizing thruster fire, causing targets to traverse accross the CCD detector. Because of subtle variations in sensitivity between pixels, as well as within each pixel, <i>K2</i> light curves have periodic systematic noise.</p>
-									<p>In order to better understand the characteristics of <i>K2</i> noise and test noise removal methods, I developed a Python package called <a style="font-family:monospace; color:#3296d9;" href="https://nksaunders.space/scope/">scope</a> (Simulated CCD Observations for Photometric Experimentation) to simulate the pixel sensitivty variation of the <i>Kepler</i> detector and motion of targets, ultimately reproducing the noise properties of <i>K2</i> light curves. <a style="font-family:monospace; color:#3296d9;" href="https://nksaunders.space/scope/">Scope</a> was used to test the performance of the <a style="font-family:monospace; color:#3296d9;" href="https://luger.dev/everest/index.html">everest</a> pipeline, particularly in the case of high motion. The results of the paper linked below influenced the decision to continue observation and upload larger aperture masks for <i>K2</i> campaign 17.</p>
-									<ul class="actions">
-										<li><a href="https://github.com/nksaunders/scope" class="button small">The Code</a></li>
-										<li><a href="https://iopscience.iop.org/article/10.3847/1538-3881/ab12e4" class="button small">The Paper</a></li>
-										<li><a href="files/scope_example.html" class="button small">Examples</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
+{% include footer.html %}
 
-				<!-- Four -->
-					<section id="pub-space" class="wrapper style3 special">
-						<div class="container">
-							<header class="major">
-								<p>Click below for a full list of my publications.</p>
-							</header>
-							<ul class="actions">
-								<li><a href="https://ui.adsabs.harvard.edu/public-libraries/YuVwCY9TTe2mgyu3gSgVIA" class="button special"><b>My Papers</b></a></li>
-							</ul>
-						</div>
-					</section>
-
-	<!-- Three -->
-		<section id="codes" class="wrapper style1">
-			<div class="container">
-				<header class="major special" style="text-align: right;">
-					<h2>Codes</h2>
-					<p>Software projects to which I've contributed</p>
-				</header>
-				<div class="feature-grid">
-					<div class="feature">
-						<div class="image rounded"><a href="https://docs.lightkurve.org"><img src="images/lk.png" alt="" style="width:100%; height:100%"/></a></div>
-						<div class="content">
-							<header>
-								<h4 style="font-family:monospace; color:#3296d9;"><a href="https://docs.lightkurve.org">lightkurve</a></h4>
-								<p>A friendly package for Kepler & TESS time series analysis</p>
-							</header>
-							<p>I am a core developer of the <a style="font-family:monospace; color:#3296d9;" href="https://docs.lightkurve.org">lightkurve</a> package. The goal of <a style="font-family:monospace; color:#3296d9;" href="https://docs.lightkurve.org">lightkurve</a> is to lower the bar for astronomical time series analysis by providing clear and easy to use tools to the astronomy community. <a style="font-family:monospace; color:#3296d9;" href="https://docs.lightkurve.org">Lightkurve</a> is a great software package for introducing undergraduate and graduate students to the basic principles of exoplanet or binary system detection and characterization, stellar variability, or transient detection in space telescope photometry.</p>
-							<p style="font-size:75%;"><i>Adorable image created by <a href="https://twitter.com/thechedgehog" style="color:#3296d9">Christina Hedges</a>.</i></p>
-						</div>
-					</div>
-					<div class="feature">
-						<div class="image rounded"><a href="https://adina.feinste.in/eleanor/"><img src="images/ffi.jpg" alt="" style="width:100%; height:100%"/></a></div>
-						<div class="content">
-							<header>
-								<h4 style="font-family:monospace; color:#3296d9;"><a href="https://adina.feinste.in/eleanor/">eleanor</a></h4>
-								<p>Simple light curve extraction from TESS FFIs</p>
-							</header>
-							<p>I am also a member of the core development team for the <a style="font-family:monospace; color:#3296d9;" href="https://adina.feinste.in/eleanor/">eleanor</a>TESS pipeline. This pipeline provides systematics-corrected light curves for hundreds of thousands of targets in the <i>TESS</i> FFIs, and enables users to produce custom systematics-corrected light curves for any target with a given TIC ID, Gaia source ID, or RA and dec coordinates.</p>
-						</div>
-					</div>
-					<div class="feature">
-						<div class="image rounded"><a href="https://nksaunders.space/scope/"><img src="images/scope.gif" alt="" style="width:100%; height:100%"/></a></div>
-						<div class="content">
-							<header>
-								<h4 style="font-family:monospace; color:#3296d9;"><a href="https://nksaunders.space/scope/">scope</a></h4>
-								<p>Simulated CCD Observations for Photometric Experimentation</p>
-							</header>
-							<p>I am the lead developer for the <a style="font-family:monospace; color:#3296d9;" href="https://nksaunders.space/scope/">scope</a> simulation tool. This package was used to test the performance of the <a style="font-family:monospace; color:#3296d9;" href="https://luger.dev/everest/index.html">everest</a> pipeline, particularly in the case of high motion. The results of the paper linked below influenced the decision to continue observation and upload larger aperture masks for <i>K2</i> campaign 17.</p>
-						</div>
-					</div>
-					<div class="feature">
-						<div class="image rounded"><a href="https://luger.dev/everest/index.html"><img src="images/everest.png" alt="" style="width:100%; height:100%"/></a></div>
-						<div class="content">
-							<header>
-								<h4 style="font-family:monospace; color:#3296d9;"><a href="https://luger.dev/everest/index.html">everest</a></h4>
-								<p>Pixel Level Decorrelation of K2 Light Curves</p>
-							</header>
-							<p>I contributed to the development of the <span style="font-family:monospace; color:#3296d9;">everest</span> K2 pipeline. This pipeline was developed by Luger et al. (<a href="https://arxiv.org/pdf/1607.00524.pdf" style="color:#3296d9;">2016</a>, <a href="https://arxiv.org/pdf/1702.05488.pdf" style="color:#3296d9;">2018</a>) to remove systematic noise from <i>K2</i> light curves. Using a method called Pixel Level Decorrelation (PLD) based on the work of <a href="http://iopscience.iop.org/article/10.1088/0004-637X/805/2/132/pdf" style="color:#3296d9;">Deming et al. (2015)</a>, we achieved <i>Kepler</i>-like precision in de-trended <i>K2</i> light curves down to 15th magnitude.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- Four -->
-			<section id="github-space" class="wrapper style3 special">
-				<div class="container">
-					<header class="major">
-						<p>All of my software can be found on my GitHub.</p>
-					</header>
-					<ul class="actions">
-						<li><a href="https://nksaunders.space/files/nsaunders_cv.pdf" class="button special">My GitHub</a></li>
-					</ul>
-				</div>
-			</section>
-
-			<!-- Three -->
-				<section id="outreach" class="wrapper style1">
-					<div class="container">
-						<header class="major special" style="text-align: center;">
-							<h2>Outreach</h2>
-							<p><span class="image fit"><img src="images/planet.gif" alt="" style="overflow:hidden; width:50%; height:120px; object-fit:cover; display:block; margin: 0 auto;" /></span></p>
-						</header>
-						<div style="max-width:800px; display:block; margin: 0 auto;">
-							<p>Since 2015, I have been an active volunteer for outreach events and planetarium shows. While at UW, I gave weekly shows for visiting elementary and high school classes, groups of teachers, UW students, members of local Indian Reservations, and the public. I also organized a new set of free monthly public shows, and managed ticket sales and social media for the planetarium.</p>
-							<p>During the 2017 solar eclipse, I visited the Warm Springs Reservation in Oregon and taught middle school students about solar system science. I also helped organize public viewing through telescopes at night and solar telescopes during the day.</p>
-						</div>
-					</div>
-				</section>
-
-				<!-- Four -->
-					<section id="twitter-space" class="wrapper style3 special">
-						<div class="container">
-							<header class="major">;
-								<p>Thanks for stopping by!</p>
-							</header>
-							<ul class="actions">
-								<ul class="icons">
-									<li><a href="https://twitter.com/nksaunders" class="icon fa-twitter" style="color:#4dccff;"></a></li>
-								</ul>
-							</ul>
-						</div>
-					</section>
-
-		<!-- Footer -->
-			<footer id="footer">
-				<div class="container">
-					<ul class="copyright" style="font-size:10pt">
-						<li>&copy; Nicholas Saunders 2024</li>
-						<li>Design adapted from <a style="font-family:monospace; color:#3296d9;" href="http://templated.co">templated</a></li>
-						<li>Background gif by <a href="http://www.spitzer.caltech.edu/mission/profile/82-Tim-Pyle">T. Pyle (NASA JPL)</a></li>
-					</ul>
-				</div>
-			</footer>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+</body>
 </html>

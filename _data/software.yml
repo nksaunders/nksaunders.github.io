@@ -1,0 +1,12 @@
+- name: lightkurve
+  url: https://docs.lightkurve.org
+  role: core developer
+- name: eleanor
+  url: https://adina.feinste.in/eleanor/
+  role: core developer
+- name: giants
+  url: https://github.com/nksaunders/giants
+  role: TESS FFI pipeline
+- name: scope
+  url: https://nksaunders.space/scope/
+  role: detector simulator

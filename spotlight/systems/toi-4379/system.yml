@@ -1,0 +1,37 @@
+# TOI-4379 b — GTG VI (Saunders et al. 2024, AJ 168, 81), Table 2.
+name: TOI-4379 b
+description: Hot Jupiter orbiting a subgiant
+paper:
+  label: GTG VI · Saunders et al. 2024
+  url: https://iopscience.iop.org/article/10.3847/1538-3881/ad543b
+order: 3
+
+orbit:
+  period: 3.25352
+  period_err: 0.00002
+  t0: 2734.269
+  rp_rs: 0.077
+  a_rs: 4.63
+  cos_i: 0.041
+  secosw: -0.018
+  sesinw: 0.096
+  ecc: 0.018
+
+transit:
+  data: tess.csv
+  q: [0.114, 0.404]
+  bin_minutes: 30
+  tweak: {b: 0.22, rp_rs: 0.074, a_rs: 4.7, u: [0.51, 0.16]}   # chi-by-eye, display only
+
+rv:
+  K: 119
+  data:
+    - {file: hires.csv, label: HIRES, scale: 1000}
+
+rm:
+  data: kpf_rm.csv         # KPF, 2023-06-06 (ingress not observable)
+  scale: 1000
+  lambda_deg: -1.0
+  lambda_err: 26
+  vsini_kms: 6.41
+  q: [0.620, 0.589]        # KPF

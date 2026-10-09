@@ -1,0 +1,6 @@
+time mnvel errvel tel svalue
+2460125.88677 -4 39 k \nodata
+2460126.86926 37 28 k \nodata
+2460128.84665 60 36 k \nodata
+2460129.86790 63 27 k \nodata
+2460130.88446 32 28 k \nodata
