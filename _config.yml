@@ -13,6 +13,8 @@ links:
   cv: /files/nsaunders_cv.pdf
   ads: https://ui.adsabs.harvard.edu/public-libraries/YuVwCY9TTe2mgyu3gSgVIA
   github: https://github.com/nksaunders
+  # /advice/ forwards here: the "Publish to the web" link of the Advice for Students doc
+  advice: https://docs.google.com/document/d/e/2PACX-1vTXTyG8qx5rMcugRBOrwAyL-AuvXzBpoMSOFt6CMHX6MBhiadg901R1AlB_tGFx1lkWN9pCqdQ4-K1h/pub
 
 # Source folders for the System Spotlight pipeline are not part of the site.
 exclude:
