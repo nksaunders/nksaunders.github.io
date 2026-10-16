@@ -1,0 +1,14 @@
+# Events on /tutorials/, newest first. Copy a block to the top to add one.
+#   Any url left blank shows as "link coming soon" instead of a broken link.
+#   slides: put the PDF at that path in the repo and the link appears by itself.
+
+- title: "ASTR 2550 Guest Lecture: How to Find a Planet"
+  date: 16 October 2026
+  slides: /tutorials/astr2550/slides.pdf
+  start:
+    label: Recovering a transiting planet in TESS data
+    url: https://colab.research.google.com/drive/1TXbEOse-40pf2TrNwekJ776Z4r_pl8gV
+  extensions:           # "Finished early?" list; add more items below
+    - title: Finding a planet hidden by its star (AU Mic b)
+      text: Remove starspot signals to uncover a young planet.
+      url: https://colab.research.google.com/drive/1Ydk1yH0v_cYdNOfhYrb5XdBn-lttOfY6

@@ -1,0 +1,56 @@
+---
+---
+<!doctype html>
+<html lang="en" data-theme="day">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tutorials · {{ site.title }}</title>
+  <meta name="description" content="Slides, notebooks and data for workshops and guest lectures.">
+  <link rel="canonical" href="{{ site.url }}/tutorials/">
+{% include head.html %}
+</head>
+<body>
+
+{% include topbar.html %}
+
+<main class="tutorials">
+  <section class="wrap page-head">
+    <p class="eyebrow">Student resources</p>
+    <h1>Tutorials</h1>
+  </section>
+
+  {% for e in site.data.tutorials %}
+  {% assign slides_file = site.static_files | where: "path", e.slides | first %}
+  <section class="wrap os-section tut-event">
+    <div class="label-row">
+      <h2 class="tut-title">{{ e.title }}</h2>
+      <span class="label-aside">{{ e.date }}</span>
+    </div>
+
+    {% if e.slides %}<p class="tut-slides">Slides: {% if slides_file %}<a href="{{ e.slides }}">PDF →</a>{% else %}<span class="tut-soon">coming soon</span>{% endif %}</p>{% endif %}
+
+    {% if e.start %}
+    <div class="tut-start">
+      <p class="tut-kicker">Start here</p>
+      <p class="tut-start-title">{{ e.start.label }}</p>
+      {% if e.start.url %}<a class="btn btn-primary" href="{{ e.start.url }}">Open in Google Colab →</a>{% else %}<span class="tut-soon">Link coming soon</span>{% endif %}
+      <p class="tut-note">First, click <b>File → Save a copy in Drive</b>. Otherwise your changes won't be saved.</p>
+    </div>
+    {% endif %}
+
+    {% if e.extensions %}
+    <h3 class="tut-sub">Finished early?</h3>
+    <ul class="tut-list">
+      {% for x in e.extensions %}
+      <li>{% if x.url %}<a href="{{ x.url }}">{{ x.title }}</a>{% else %}<span class="tut-name">{{ x.title }}</span> <span class="tut-soon">(link coming soon)</span>{% endif %}{% if x.text %}<br><span class="tut-desc">{{ x.text }}</span>{% endif %}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </section>
+  {% endfor %}
+</main>
+
+{% include footer.html %}
+</body>
+</html>

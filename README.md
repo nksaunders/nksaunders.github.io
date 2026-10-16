@@ -19,6 +19,7 @@ Ignore below, this is to remind future me how to update my own website.
 | Off-sky page text, pets, kitchen, outdoors | `_data/personal.yml`, photos in `assets/img/personal/` |
 | Current Favorites (4 posters) | `_data/favorites.yml`, then `scripts/fetch_posters.py` |
 | Top ten by decade | the workbook in `films/`, then `scripts/import_films.py` |
+| Tutorials page (/tutorials/) | `_data/tutorials.yml`; slide PDFs in `tutorials/<event>/` |
 
 Push to the published branch and GitHub rebuilds the site in a minute or two.
 
@@ -58,6 +59,18 @@ shown newest first.
 `TMDB_API_KEY=... python scripts/fetch_posters.py` (free key from
 themoviedb.org → Settings → API). It writes `_data/posters.yml`. Until a film
 has a poster, the page shows a typeset title card in its place.
+
+## Hosted data
+
+`data/pscomppars.csv` is a snapshot of the NASA Exoplanet Archive
+Planetary Systems Composite table, read by the ASTR 2550 Colab notebooks at
+https://nksaunders.space/data/pscomppars.csv. **Don't move or rename it.**
+Snapshot taken: 2026-10-16. To regenerate (same columns; the notebooks
+depend on them):
+
+```
+curl -L -o data/pscomppars.csv "https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+pl_name,hostname,tic_id,sy_pnum,discoverymethod,disc_year,disc_facility,tran_flag,pl_orbper,pl_rade,pl_radj,pl_trandep,pl_trandur,st_rad,st_teff,sy_tmag+from+pscomppars&format=csv"
+```
 
 ## Preview locally
 
