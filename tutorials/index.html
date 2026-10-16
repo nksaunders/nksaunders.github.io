@@ -49,6 +49,17 @@
     {% endif %}
   </section>
   {% endfor %}
+
+  {% if site.data.tutorial_links %}
+  <section class="wrap os-section">
+    <h2 class="label">More tutorials</h2>
+    <ul class="tut-list">
+      {% for l in site.data.tutorial_links %}
+      <li><a href="{{ l.url }}">{{ l.title }} →</a>{% if l.text %}<br><span class="tut-desc">{{ l.text }}</span>{% endif %}</li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
 </main>
 
 {% include footer.html %}

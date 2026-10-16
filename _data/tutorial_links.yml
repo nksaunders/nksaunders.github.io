@@ -1,0 +1,4 @@
+# "More tutorials" on /tutorials/: standing resources that aren't tied to one event.
+- title: Lightkurve tutorials
+  url: https://lightkurve.github.io/lightkurve/tutorials/index.html
+  text: Step-by-step notebooks for finding planets and studying stars in Kepler, K2 and TESS data.

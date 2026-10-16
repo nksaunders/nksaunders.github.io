@@ -19,7 +19,7 @@ Ignore below, this is to remind future me how to update my own website.
 | Off-sky page text, pets, kitchen, outdoors | `_data/personal.yml`, photos in `assets/img/personal/` |
 | Current Favorites (4 posters) | `_data/favorites.yml`, then `scripts/fetch_posters.py` |
 | Top ten by decade | the workbook in `films/`, then `scripts/import_films.py` |
-| Tutorials page (/tutorials/) | `_data/tutorials.yml`; slide PDFs in `tutorials/<event>/` |
+| Tutorials page (/tutorials/) | `_data/tutorials.yml` (events), `_data/tutorial_links.yml` (More tutorials); slide PDFs in `tutorials/<event>/` |
 
 Push to the published branch and GitHub rebuilds the site in a minute or two.
 
