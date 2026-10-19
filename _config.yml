@@ -6,8 +6,10 @@ description: >-
 url: https://nksaunders.space
 email: nicholas.saunders@yale.edu
 
-# Google Analytics 4 measurement ID (G-XXXXXXXXXX). Leave blank for no analytics.
-ga4_id:
+# Visitor counts via GoatCounter (no cookies). Put your GoatCounter code here,
+# e.g. "nksaunders" for nksaunders.goatcounter.com. Leave blank to turn it off.
+# A page can opt out with  analytics: false  in its front matter (/tutorials/ does).
+goatcounter: nksaunders
 
 links:
   cv: /files/nsaunders_cv.pdf
