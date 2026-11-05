@@ -61,7 +61,8 @@ a:hover { color: var(--accent); }
    narrow = two-row bar, small photo above, 32px headline.
    Sizes inside each layout are fixed so nothing reflows as the width changes. */
 .topbar { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-top: 24px; padding-bottom: 24px; }
-.wordmark { font-size: 14px; letter-spacing: .02em; text-decoration: none; }
+.wordmark { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; letter-spacing: .02em; text-decoration: none; }
+.wordmark svg { flex: none; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
 .topbar-right { display: flex; align-items: center; gap: 26px; }
 .nav { display: flex; gap: 24px; font-size: 17px; }
 .nav a { color: var(--soft); text-decoration: none; }
