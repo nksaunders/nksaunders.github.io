@@ -6,16 +6,13 @@ description: >-
 url: https://nksaunders.space
 email: nicholas.saunders@yale.edu
 
-# Visitor counts via GoatCounter (no cookies). Put your GoatCounter code here,
-# e.g. "nksaunders" for nksaunders.goatcounter.com. Leave blank to turn it off.
-# A page can opt out with  analytics: false  in its front matter (/tutorials/ does).
+# Visitor counts via GoatCounter (no cookies). 
 goatcounter: nksaunders
 
 links:
   cv: /files/nsaunders_cv.pdf
   scix: https://scixplorer.org/public-libraries/YuVwCY9TTe2mgyu3gSgVIA
   github: https://github.com/nksaunders
-  # /advice/ forwards here: the "Publish to the web" link of the Advice for Students doc
   advice: https://docs.google.com/document/d/e/2PACX-1vTXTyG8qx5rMcugRBOrwAyL-AuvXzBpoMSOFt6CMHX6MBhiadg901R1AlB_tGFx1lkWN9pCqdQ4-K1h/pub
 
 # Source folders for the System Spotlight pipeline are not part of the site.
